@@ -2,7 +2,7 @@ This is a VERY basic, rough and ready demo of integrating Django and Vue into a 
 
 It is not meant for production, but just provides some starting points for building a real-world project. It's lacking a lot of things that would make it so such as Docker (or other deployment/containerization system), backend or frontend unit and integration tests, etc etc. While I have provided some ideas here on how to build a secure application, this has not been tested "in the wild" and any risk in using this code is your own.
 
-One impetus for doing this is the lack of good examples out there in building a secure appliction. Most of the time, examples and tutorials use DRF auth tokens (and sometimes JWT) and storing the token(s) in localStorage. Perhaps this is OK for a toy app, but doing so without care and caveats opens up your application to XSS attacks. JWT is probably best suited for mobile and server-to-server API calls, but not for web browsers. I admit this is a controversial opinion, but current OWASP guidelines [link] recommend against storing authentication data in localStorage, sessionStorage and client-side cookies.
+One impetus for doing this is the lack of good examples out there in building a secure appliction. Most of the time, examples and tutorials use DRF auth tokens (and sometimes JWT) and storing the token(s) in localStorage. Perhaps this is OK for a toy app, but doing so without care and caveats opens up your application to XSS attacks. JWT is probably best suited for mobile and server-to-server API calls, but not for web browsers. I admit this is a controversial opinion, but current OWASP guidelines [1] recommend against storing authentication data in localStorage, sessionStorage and client-side cookies.
 
 Short of using an external service (e.g. Auth0), what is best practice for securing a Django/DRF-backed SPA? I would argue the same best practices you would follow in building a traditional server-rendered Django project: HttpOnly cookies along with CSRF protection for "write" endpoints (along with other best practices such as always using HTTPS, using SameSite cookie settings etc etc).
 
@@ -34,3 +34,7 @@ CREDITS
 This repo provided a lot of useful pointers, particularly in setting up Django template with Vue:
 
 https://github.com/gtalarico/django-vue-template
+
+
+LINKS
+[1] https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/HTML5_Security_Cheat_Sheet.md#local-storage

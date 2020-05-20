@@ -20,13 +20,16 @@ axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 // this is spaghetti but basically: check if init data in index.html,
 // if not load from API.
 (function() {
-  const initDataJson = document.getElementById("init-data");
-  if (initDataJson) {
-    const initData = JSON.parse(initDataJson.textContent);
+  const dataTag = document.getElementById("init-data");
+  if (dataTag) {
+    const initData = JSON.parse(dataTag.textContent);
     if (initData.current_user.is_authenticated) {
       store.dispatch("authenticate", initData.current_user);
     } else {
       store.dispatch("logout");
+    }
+    if (initData.messages) {
+      store.dispatch("addMessages", initData.messages);
     }
   }
 

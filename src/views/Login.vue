@@ -59,10 +59,9 @@ export default {
           url: "/api/auth/login/",
           method: "POST"
         });
-        console.log(response)
         if (response.status === 200) {
           //  full page reload : could also do a "fetch" if we wanted
-          //window.location.href = "/";
+          window.location.href = "/";
         } else if (response.status === 400) {
           this.invalidLogin = true;
         }

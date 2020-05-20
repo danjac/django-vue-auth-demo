@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.contrib import messages
 from rest_framework import serializers, generics, permissions
 
 from django.views.generic import TemplateView
@@ -11,9 +12,18 @@ class IndexView(TemplateView):
 
     template_name = "index.html"
 
+    def get_messages(self):
+        return [
+            {"message": message.message, "level": message.level}
+            for message in messages.get_messages(self.request)
+        ]
+
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
-        data["init_json"] = {"current_user": UserSerializer(self.request.user).data}
+        data["init_json"] = {
+            "current_user": UserSerializer(self.request.user).data,
+            "messages": self.get_messages(),
+        }
         return data
 
 

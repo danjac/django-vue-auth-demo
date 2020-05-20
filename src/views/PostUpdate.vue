@@ -82,7 +82,14 @@ export default {
     async submit() {
       try {
         await axios.put(this.endpoint, this.post);
-        this.$router.push({ name: 'PostDetail', params: { id: this.$route.params.id } });
+        this.$store.dispatch("addMessage", {
+          message: "Your post has been updated",
+          level: "info"
+        });
+        this.$router.push({
+          name: "PostDetail",
+          params: { id: this.$route.params.id }
+        });
       } catch (e) {
         this.invalidSubmit = true;
       }

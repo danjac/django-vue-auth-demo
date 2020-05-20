@@ -63,8 +63,13 @@ export default {
     async submit() {
       try {
         await axios.post("/api/posts/", this.post);
+        this.$store.dispatch("addMessage", {
+          message: "Your post has been submitted!",
+          level: "success"
+        });
         this.$router.push("/");
       } catch (e) {
+        console.log(e)
         this.invalidSubmit = true;
       }
     }

@@ -5,11 +5,18 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    currentUser: null
+    currentUser: null,
+    messages: []
   },
   mutations: {
     setCurrentUser(state, user) {
       state.currentUser = user;
+    },
+    addMessages(state, messages) {
+      state.messages = messages;
+    },
+    addMessage(state, message) {
+      state.messages.push(message);
     }
   },
   actions: {
@@ -18,6 +25,15 @@ export default new Vuex.Store({
     },
     logout({ commit }) {
       commit("setCurrentUser", null);
+    },
+    addMessages({ commit }, messages) {
+      commit("addMessages", messages);
+    },
+    addMessage({ commit }, message) {
+      commit("addMessage", message);
+    },
+    clearMessages({ commit }) {
+      commit("addMessages", []);
     }
   },
   getters: {

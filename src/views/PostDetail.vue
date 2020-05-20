@@ -58,14 +58,18 @@ export default {
       return this.post && this.$store.getters.isOwner(this.post);
     },
     endpoint() {
-      return `/api/posts/${this.$route.params.id}/`
+      return `/api/posts/${this.$route.params.id}/`;
     }
   },
   methods: {
-    async deletePost () {
+    async deletePost() {
       // TBD: error handling...
-      await axios.delete(this.endpoint)
-      this.$router.push("/")
+      await axios.delete(this.endpoint);
+      this.$store.dispatch("addMessage", {
+        message: "Your post has been deleted",
+        level: "info"
+      });
+      this.$router.push("/");
     }
   },
   async created() {

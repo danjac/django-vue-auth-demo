@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html><head><link href="/static/js/about.js" rel="prefetch"><link href="/static/js/login.js" rel="prefetch"><link href="/static/js/login~signup.js" rel="prefetch"><link href="/static/js/notFound.js" rel="prefetch"><link href="/static/js/postDetail.js" rel="prefetch"><link href="/static/js/postUpdate.js" rel="prefetch"><link href="/static/js/signup.js" rel="prefetch"><link href="/static/js/submitPost.js" rel="prefetch"><link href="/static/js/app.js" rel="preload" as="script"><link href="/static/js/chunk-vendors.js" rel="preload" as="script"></head>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Vue App</title>
-  <link href="/static/js/about.js" rel="prefetch"><link href="/static/js/login.js" rel="prefetch"><link href="/static/js/login~signup.js" rel="prefetch"><link href="/static/js/notFound.js" rel="prefetch"><link href="/static/js/postDetail.js" rel="prefetch"><link href="/static/js/postUpdate.js" rel="prefetch"><link href="/static/js/signup.js" rel="prefetch"><link href="/static/js/submitPost.js" rel="prefetch"><link href="/static/js/app.js" rel="preload" as="script"><link href="/static/js/chunk-vendors.js" rel="preload" as="script"></head>
   <body>
+    {{ init_json|json_script:"init-data" }}
     <div id="app"></div>
-  <script type="text/javascript" src="/static/js/chunk-vendors.js"></script><script type="text/javascript" src="/static/js/app.js"></script></body>
 </html>
+<script type="text/javascript" src="/static/js/chunk-vendors.js"></script><script type="text/javascript" src="/static/js/app.js"></script>

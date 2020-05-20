@@ -1,10 +1,10 @@
-from django.contrib.auth import get_user_model
 from django.contrib import messages
-from rest_framework import serializers, generics, permissions
-
-from django.views.generic import TemplateView
+from django.contrib.auth import get_user_model
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import ensure_csrf_cookie
+from django.views.generic import TemplateView
+
+from rest_framework import generics, permissions, serializers
 
 
 class IndexView(TemplateView):
@@ -12,6 +12,7 @@ class IndexView(TemplateView):
 
     template_name = "index.html"
 
+    # grab all server rendered messages
     def get_messages(self):
         return [
             {"message": message.message, "level": message.level}

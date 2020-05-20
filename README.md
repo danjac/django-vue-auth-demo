@@ -28,3 +28,9 @@ My aim is to be able to leverage all the advantages of Django and its ecosystem:
 I did look at django-webpack-loader. I found it a bit awkward for a number of reasons: development seemed quite slow and wasn't up to date with the latest Webpack updates (this may have since changed); and the need to have the extra step of tracking all the paths in a manifest looked like it would require more Webpack hacking and patching than I was comfortable with, sacrificing much of the ease of use provided by vue-cli and causing headaches for a CI/CD pipeline.
 
 What about a multi-page setup? I've not tried it but this might work: https://cli.vuejs.org/config/#pages. So you map the pages to Django templates in the same way as the single index.html, and have different Django views serve up those pages. Alternatively, you could just use the generic single template and inject different JSON loads at startup (maybe namespacing to easily sync with Vuex). This might work better where you don't have an SPA but instead "mini-applications" along with static content. If you need actual static content for SEO purposes you can of course just serve up plain Django views or pregenerated HTML static pages. There are different use cases and no one size fits all.
+
+CREDITS
+
+This repo provided a lot of useful pointers, particularly in setting up Django template with Vue:
+
+https://github.com/gtalarico/django-vue-template

@@ -1,4 +1,5 @@
 from django.http import JsonResponse
+
 from allauth.account.adapter import DefaultAccountAdapter
 
 

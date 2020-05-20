@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # place above staticfiles
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
+    "allauth",
     "allauth.account",
     "rest_framework",
     "backend.posts",
@@ -127,7 +128,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SITE_ID = 1
 
-ACCOUNT_ADAPTER = "backend.adapters.CustomAccountAdapter"
+# ACCOUNT_ADAPTER = "backend.adapters.CustomAccountAdapter"
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [

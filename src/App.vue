@@ -14,7 +14,7 @@
         <router-link to="/signup">Signup</router-link>
       </div>
     </div>
-    <div class="flex mx-auto px-5">
+    <div class="flex mx-auto px-5 w-full">
     <router-view />
     </div>
   </div>

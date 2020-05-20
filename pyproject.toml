@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "instagram-clone"
+name = "hn-clone"
 version = "0.1.0"
 description = ""
 authors = ["Dan Jacob <danjac2018@gmail.com>"]
@@ -8,6 +8,8 @@ authors = ["Dan Jacob <danjac2018@gmail.com>"]
 python = "^3.8"
 django = "^3.0.6"
 djangorestframework = "^3.11.0"
+django-allauth = "^0.41.0"
+whitenoise = "^5.0.1"
 
 [tool.poetry.dev-dependencies]
 

@@ -37,4 +37,5 @@ https://github.com/gtalarico/django-vue-template
 
 
 LINKS
+
 [1] https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/HTML5_Security_Cheat_Sheet.md#local-storage

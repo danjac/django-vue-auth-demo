@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "hn-clone"
+name = "backend"
 version = "0.1.0"
 description = ""
 authors = ["Dan Jacob <danjac2018@gmail.com>"]

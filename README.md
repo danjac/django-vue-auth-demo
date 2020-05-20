@@ -29,6 +29,30 @@ I did look at django-webpack-loader. I found it a bit awkward for a number of re
 
 What about a multi-page setup? I've not tried it but this might work: https://cli.vuejs.org/config/#pages. So you map the pages to Django templates in the same way as the single index.html, and have different Django views serve up those pages. Alternatively, you could just use the generic single template and inject different JSON loads at startup (maybe namespacing to easily sync with Vuex). This might work better where you don't have an SPA but instead "mini-applications" along with static content. If you need actual static content for SEO purposes you can of course just serve up plain Django views or pregenerated HTML static pages. There are different use cases and no one size fits all.
 
+GETTING STARTED
+   
+` 
+yarn 
+`
+
+` 
+poetry install
+`
+
+`
+poetry run ./manage.py migrate
+` 
+ 
+In separate terminal windows:
+
+`
+yarn dev
+`
+
+`
+poetry run ./manage.py runserver
+` 
+   
 CREDITS
 
 This repo provided a lot of useful pointers, particularly in setting up Django template with Vue:

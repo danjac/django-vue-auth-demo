@@ -18,12 +18,12 @@
     </div>
     <div
       v-if="messages"
-      class="flex justify-center w-1/2 mx-auto my-3"
+      class="justify-center w-1/3 mx-auto my-3"
     >
       <div
         v-for="(message, index) in messages"
         :key="index"
-        class="block bg-blue-500 text-white p-2 px-5 mb-3"
+        class="block bg-blue-500 text-center text-white p-2 px-5 mb-3"
       >
         {{ message.message }}
       </div>

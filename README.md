@@ -33,9 +33,6 @@ Deployment: the main issue is being able to generate and access the index.html f
 
 A pipeline that for example does a Heroku deploy would have to generate this file as part of the build process and maybe use COPY to ensure it's part of the deployment (e.g. gitlab artifacts)
 
-Example:
-
-
 
 
 GETTING STARTED

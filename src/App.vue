@@ -16,10 +16,7 @@
         <router-link to="/signup">Signup</router-link>
       </div>
     </div>
-    <div
-      v-if="messages"
-      class="justify-center w-1/3 mx-auto my-3"
-    >
+    <div v-if="messages" class="justify-center w-1/3 mx-auto my-3">
       <div
         v-for="(message, index) in messages"
         :key="index"
